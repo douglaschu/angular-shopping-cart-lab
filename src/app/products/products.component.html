@@ -1,0 +1,53 @@
+<h1>Welcome to the Twoson Department Store!</h1>
+<h2>Items in Stock!</h2>
+
+<div>
+<ul class="items">
+    <li *ngFor="let item of items; let i = index;">
+        <span class="badge"></span> {{item.product}} {{item.price | currency}} {{item.quantity}}
+      <button class="delete" title="delete product"
+        (click)="deleteItem(item.id)">X</button>
+        <button class='edit' title='edit item' (click)="editItem()">Edit</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+    <h2>Add a Product</h2>
+    <div>
+      <label>Product Name:
+        <input [(ngModel)]="itemData.product" placeholder="Product Name"/>
+      </label><br>
+      <label>Product Price:
+        <input [(ngModel)]="itemData.price" placeholder="Product Price"/>
+      </label><br>
+      <label>Product Quantity:
+        <input [(ngModel)]="itemData.quantity" placeholder="Product Quantity"/>
+      </label><br>
+    </div>
+    <button (click)="addItem()">Add</button>
+  </div>
+
+
+
+<!-- Button for PUT edit product method<div>
+    <button routerLink="/product-edit/{{product._id}}">
+      Edit
+    </button>
+    </div -->
+
+<!-- <div>
+    <h2>Item Edit</h2>
+    <div>
+        <label>Item Name:
+        <input [(ngModel)]="itemData.product" placeholder="Item Name"/>
+        </label><br>
+        <label>Item Price:
+        <input [(ngModel)]="itemData.price" placeholder="Item Price"/>
+        </label><br>
+        <label>Item Quantity:
+        <input [(ngModel)]="itemData.quantity" placeholder="Item Quantity"/>
+        </label><br>
+    </div>
+    <button (click)="updateProduct()">Update</button>
+</div> -->

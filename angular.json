@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-shopping-cart-lab"
+    }
+  },
+  "defaultProject": "angular-shopping-cart-lab",
+  "cli": {
+    "analytics": false
+  }
 }
