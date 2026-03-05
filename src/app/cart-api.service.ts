@@ -45,7 +45,7 @@ export class CartApiService {
 
   //PUT??
   //why not
-  editItem(id: number, item: Item): Observable<any> {
+  updateItem(id: number, item: Item): Observable<any> {
     return this.http.put<Item>(this.apiUrl + id, item)
     //.pipe(catchError(this.handleError))
     ;

@@ -1,13 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://kit.fontawesome.com/a9b17fdf56.js" crossorigin="anonymous"></script>
+  </head>
+<html>
 <h1>Welcome to the Twoson Department Store!</h1>
 <h2>Items in Stock!</h2>
 
 <div>
 <ul class="items">
     <li *ngFor="let item of items; let i = index;">
+      <!-- this loops through the array of database file of products and creates a list item with an assigned ID for each one -->
         <span class="badge"></span> {{item.product}} {{item.price | currency}} {{item.quantity}}
+        <!-- API calls to display product information the way I want them -->
       <button class="delete" title="delete product"
-        (click)="deleteItem(item.id)">X</button>
-        <button class='edit' title='edit item' (click)="editItem()">Edit</button>
+        (click)="deleteItem(item.id)">X</button> 
+        <!-- Creates a button to delete products. Clicking fires the method for deleting items based on their ID. -->
+        <button class='edit' title='edit item' (click)="updateItem">Edit</button>
+        <!-- Creates a button to edit product information. Clicking fires the method for updating items. -->
     </li>
   </ul>
 </div>
@@ -28,15 +37,7 @@
     <button (click)="addItem()">Add</button>
   </div>
 
-
-
-<!-- Button for PUT edit product method<div>
-    <button routerLink="/product-edit/{{product._id}}">
-      Edit
-    </button>
-    </div -->
-
-<!-- <div>
+<div>
     <h2>Item Edit</h2>
     <div>
         <label>Item Name:
@@ -49,5 +50,7 @@
         <input [(ngModel)]="itemData.quantity" placeholder="Item Quantity"/>
         </label><br>
     </div>
-    <button (click)="updateProduct()">Update</button>
-</div> -->
+    <button (click)="updateItem()">Update</button>
+</div>
+
+</html>

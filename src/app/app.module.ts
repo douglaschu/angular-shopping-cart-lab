@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,15 @@ import { ProductsComponent } from './products/products.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  // Font Awesome icons go here
+  // constructor(library: FaIconLibrary) {
+  //   library.addIcons(faTrashAlt);
+  // }
+}
